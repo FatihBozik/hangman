@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Adam Asmaca</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="hangman">Adam Asmaca</string>
+    <string name="single_player">Tek Oyunculu</string>
+    <string name="multi_player">Çok Oyunculu</string>
+    <string name="score">Puan</string>
+    <string name="title_activity_game">GameActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_game_over_actitvity">GameOverActitvity</string>
+    <string name="title_activity_save_over">SaveOverActivity</string>
+    <string name="title_activity_guess_dialog">GuessDialog</string>
+    <string name="title_activity_multiplayer">MultiplayerActivity</string>
+    <string name="title_activity_scores">ScoresActivity</string>
+
+</resources>

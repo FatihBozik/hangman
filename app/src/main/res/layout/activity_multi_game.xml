@@ -1,0 +1,450 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.example.fatih.hangman.GameActivity"
+    android:background="@drawable/background_base">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/layoutGuessWord"
+        android:background="@color/fatih"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tahmin et"
+            android:id="@+id/guessButton"
+            android:layout_marginLeft="20dp"
+            android:background="@color/light_blue" />
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextGuessWord"
+            android:maxLength="4"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayoutWord"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayoutLetters"
+        android:background="@drawable/rounded_corner"
+        android:layout_marginBottom="48dp"
+        android:layout_above="@+id/layoutGuessWord"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout1"
+            android:layout_above="@+id/layoutGuessWord"
+            android:layout_centerHorizontal="true"
+            android:weightSum="1" >
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="A"
+                android:id="@+id/textView30"
+                android:layout_below="@+id/failedTextView"
+                android:layout_toRightOf="@+id/failedTextView"
+                android:layout_toEndOf="@+id/failedTextView"
+                android:textSize="25dp"
+                android:layout_marginLeft="25dp"
+                android:focusable="false"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="B"
+                android:id="@+id/textView31"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="C"
+                android:id="@+id/textView32"
+                android:layout_alignTop="@+id/linearLayout1"
+                android:layout_toRightOf="@+id/linearLayout1"
+                android:layout_toEndOf="@+id/linearLayout1"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_weight="0.10"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Ç"
+                android:id="@+id/textView33"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_weight="0.11"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="D"
+                android:id="@+id/textView34"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_weight="0.09"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="E"
+                android:id="@+id/textView35"
+                android:layout_alignTop="@+id/linearLayout1"
+                android:layout_toRightOf="@+id/linearLayout1"
+                android:layout_toEndOf="@+id/linearLayout1"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_weight="0.10"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:text="F"
+                android:id="@+id/textView36"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_weight="0.10"
+                android:onClick="selectLetter" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2"
+            android:layout_marginBottom="0dp"
+            android:weightSum="1" >
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="G"
+                android:id="@+id/textView37"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_weight="0.13"
+                android:layout_marginLeft="25dp"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Ğ"
+                android:id="@+id/textView38"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_weight="0.13"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="H"
+                android:id="@+id/textView39"
+                android:layout_above="@+id/layoutGuessWord"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_weight="0.13"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="I"
+                android:id="@+id/textView40"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="İ"
+                android:id="@+id/textView41"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="J"
+                android:id="@+id/textView42"
+                android:textIsSelectable="false"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="K"
+                android:id="@+id/textView43"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:onClick="selectLetter" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout3"
+            android:layout_above="@+id/layoutGuessWord"
+            android:layout_centerHorizontal="true"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="L"
+                android:id="@+id/textView44"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_marginLeft="25dp"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="M"
+                android:id="@+id/textView45"
+                android:layout_below="@+id/failedTextView"
+                android:layout_toRightOf="@+id/failedTextView"
+                android:layout_toEndOf="@+id/failedTextView"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="N"
+                android:id="@+id/textView46"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="O"
+                android:id="@+id/textView47"
+                android:layout_alignTop="@+id/linearLayout1"
+                android:layout_toRightOf="@+id/linearLayout1"
+                android:layout_toEndOf="@+id/linearLayout1"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Ö"
+                android:id="@+id/textView48"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="P"
+                android:id="@+id/textView49"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_weight="0.07"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="R"
+                android:id="@+id/textView50"
+                android:layout_alignTop="@+id/linearLayout1"
+                android:layout_toRightOf="@+id/linearLayout1"
+                android:layout_toEndOf="@+id/linearLayout1"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_weight="0.09"
+                android:onClick="selectLetter" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout4"
+            android:layout_above="@+id/layoutGuessWord"
+            android:layout_centerHorizontal="true"
+            android:weightSum="1" >
+
+            <TextView
+                android:layout_width="43dp"
+                android:layout_height="wrap_content"
+                android:text="S"
+                android:id="@+id/textView51"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_weight="0.06"
+                android:layout_marginLeft="15dp"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="43dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Ş"
+                android:id="@+id/textView52"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_weight="0.06"
+                android:layout_marginLeft="5dp"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="43dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="T"
+                android:id="@+id/textView53"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_marginLeft="5dp"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="43dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="U"
+                android:id="@+id/textView54"
+                android:layout_above="@+id/layoutGuessWord"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="43dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Ü"
+                android:id="@+id/textView55"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="43dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="V"
+                android:id="@+id/textView56"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="43dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Y"
+                android:id="@+id/textView57"
+                android:textIsSelectable="false"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:layout_weight="0.09"
+                android:onClick="selectLetter" />
+
+            <TextView
+                android:layout_width="43dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Z"
+                android:id="@+id/textView58"
+                android:textSize="25dp"
+                android:focusable="false"
+                android:onClick="selectLetter" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:id="@+id/hangmanImage"
+        android:src="@drawable/hangman_0"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/linearLayoutLetters"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="96dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="144dp"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>
