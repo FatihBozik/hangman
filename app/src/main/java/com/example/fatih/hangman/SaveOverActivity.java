@@ -24,7 +24,7 @@ public class SaveOverActivity extends ActionBarActivity {
         TextView tv = (TextView) findViewById(R.id.word);
         tv.setText(word);
 
-        int points = getIntent().getIntExtra("Points Identifier", 0);
+        int points = getIntent().getIntExtra("POINT IDENTIFIER", 0);
         TextView scoreTextView = (TextView) findViewById(R.id.textViewPoints);
         scoreTextView.setText(String.valueOf(points));
         mPoints = points;
