@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="com.example.fatih.hangman.GameActivity"
-    android:background="@drawable/background_base">
+    android:background="@color/white">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -23,17 +23,19 @@
             android:text="Pas"
             android:id="@+id/passButton"
             android:layout_marginLeft="40dp"
-            android:background="@color/light_blue"
-            android:onClick="pass" />
+            android:background="@color/orange_pure"
+            android:onClick="pass"
+            android:textColor="@color/white" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonHint"
             android:layout_marginLeft="50dp"
-            android:background="@color/light_blue"
+            android:background="@color/orange_pure"
             android:layout_weight="0.15"
-            android:onClick="hint" />
+            android:onClick="hint"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -43,8 +45,9 @@
         android:id="@+id/linearLayoutWord"
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="false"
-        android:layout_centerInParent="true"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="210dp">
     </LinearLayout>
 
     <LinearLayout
@@ -52,7 +55,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutLetters"
-        android:background="@drawable/rounded_corner"
         android:layout_marginBottom="48dp"
         android:layout_above="@+id/layoutGuessWord"
         android:layout_centerHorizontal="true"
@@ -74,13 +76,14 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="A"
                 android:id="@+id/textView30"
-                android:layout_below="@+id/failedTextView"
                 android:layout_toRightOf="@+id/failedTextView"
                 android:layout_toEndOf="@+id/failedTextView"
                 android:textSize="25dp"
                 android:layout_marginLeft="25dp"
                 android:focusable="false"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -90,7 +93,9 @@
                 android:id="@+id/textView31"
                 android:textSize="25dp"
                 android:focusable="false"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -104,7 +109,9 @@
                 android:textSize="25dp"
                 android:focusable="false"
                 android:layout_weight="0.10"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -115,7 +122,8 @@
                 android:textSize="25dp"
                 android:focusable="false"
                 android:layout_weight="0.11"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -126,7 +134,9 @@
                 android:textSize="25dp"
                 android:focusable="false"
                 android:layout_weight="0.09"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -140,7 +150,9 @@
                 android:textSize="25dp"
                 android:focusable="false"
                 android:layout_weight="0.10"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -150,7 +162,9 @@
                 android:textSize="25dp"
                 android:focusable="false"
                 android:layout_weight="0.10"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -172,7 +186,9 @@
                 android:focusable="false"
                 android:layout_weight="0.13"
                 android:layout_marginLeft="25dp"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -183,7 +199,9 @@
                 android:textSize="25dp"
                 android:focusable="false"
                 android:layout_weight="0.13"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -197,7 +215,9 @@
                 android:textSize="25dp"
                 android:focusable="false"
                 android:layout_weight="0.13"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -207,7 +227,9 @@
                 android:id="@+id/textView40"
                 android:textSize="25dp"
                 android:focusable="false"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -217,7 +239,9 @@
                 android:id="@+id/textView41"
                 android:textSize="25dp"
                 android:focusable="false"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -228,7 +252,9 @@
                 android:textIsSelectable="false"
                 android:textSize="25dp"
                 android:focusable="false"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -238,7 +264,9 @@
                 android:id="@+id/textView43"
                 android:textSize="25dp"
                 android:focusable="false"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -260,7 +288,9 @@
                 android:textSize="25dp"
                 android:focusable="false"
                 android:layout_marginLeft="25dp"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -273,7 +303,9 @@
                 android:layout_toEndOf="@+id/failedTextView"
                 android:textSize="25dp"
                 android:focusable="false"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -283,7 +315,9 @@
                 android:id="@+id/textView46"
                 android:textSize="25dp"
                 android:focusable="false"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -296,7 +330,9 @@
                 android:layout_toEndOf="@+id/linearLayout1"
                 android:textSize="25dp"
                 android:focusable="false"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -306,7 +342,9 @@
                 android:id="@+id/textView48"
                 android:textSize="25dp"
                 android:focusable="false"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -317,7 +355,9 @@
                 android:textSize="25dp"
                 android:focusable="false"
                 android:layout_weight="0.07"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="45dp"
@@ -331,7 +371,9 @@
                 android:textSize="25dp"
                 android:focusable="false"
                 android:layout_weight="0.09"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -353,7 +395,9 @@
                 android:focusable="false"
                 android:layout_weight="0.06"
                 android:layout_marginLeft="15dp"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="43dp"
@@ -365,7 +409,9 @@
                 android:focusable="false"
                 android:layout_weight="0.06"
                 android:layout_marginLeft="5dp"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="43dp"
@@ -376,7 +422,9 @@
                 android:textSize="25dp"
                 android:focusable="false"
                 android:layout_marginLeft="5dp"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="43dp"
@@ -389,7 +437,9 @@
                 android:layout_alignParentEnd="true"
                 android:textSize="25dp"
                 android:focusable="false"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="43dp"
@@ -399,7 +449,9 @@
                 android:id="@+id/textView55"
                 android:textSize="25dp"
                 android:focusable="false"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="43dp"
@@ -409,7 +461,9 @@
                 android:id="@+id/textView56"
                 android:textSize="25dp"
                 android:focusable="false"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="43dp"
@@ -421,7 +475,9 @@
                 android:textSize="25dp"
                 android:focusable="false"
                 android:layout_weight="0.09"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="43dp"
@@ -431,23 +487,37 @@
                 android:id="@+id/textView58"
                 android:textSize="25dp"
                 android:focusable="false"
-                android:onClick="selectLetter" />
+                android:onClick="selectLetter"
+                android:typeface="normal"
+                android:textColor="@color/black" />
 
         </LinearLayout>
     </LinearLayout>
 
-    <ImageView
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="250dp"
-        android:id="@+id/hangmanImage"
-        android:src="@drawable/hangman_0"
-        android:layout_alignParentTop="true"
-        android:layout_above="@+id/linearLayoutLetters"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="96dp"
-        android:layout_marginEnd="96dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/orange"
         android:layout_marginBottom="144dp"
-        android:layout_marginTop="10dp" />
+        android:id="@+id/linearLayout5">
+
+        <ImageView
+            android:layout_width="135dp"
+            android:layout_height="179dp"
+            android:id="@+id/hangmanImage"
+            android:src="@drawable/hangman_0"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="105dp"
+            android:layout_marginStart="137dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+    </LinearLayout>
 
 </RelativeLayout>

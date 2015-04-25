@@ -3,14 +3,10 @@ package com.example.fatih.hangman;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -20,21 +16,11 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView title = (TextView) findViewById(R.id.textView_hangman);
-        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "Cheveuxdange.ttf");
-        title.setTypeface(myTypeface);
-        title.setTextColor(getResources().getColor(R.color.blue));
-
         Button btn1 = (Button) findViewById(R.id.button_singleplayer);
-        Button btn2 = (Button) findViewById(R.id.button_multiplayer);
-        Button btn3 = (Button) findViewById(R.id.button_score);
-        btn1.setTypeface(myTypeface);
-        btn2.setTypeface(myTypeface);
-        btn3.setTypeface(myTypeface);
+        Button btn2 = (Button) findViewById(R.id.button_score);
 
         btn1.setTransformationMethod(null);
         btn2.setTransformationMethod(null);
-        btn3.setTransformationMethod(null);
     }
 
     public void startSinglePlayerGame(View v) {

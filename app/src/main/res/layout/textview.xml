@@ -9,5 +9,6 @@
         android:layout_gravity="bottom"
         android:layout_marginRight="5dp"
         android:padding="5dp"
-        android:textSize="40dp"
+        android:textColor="@color/black"
+        android:textSize="37dp"
     />

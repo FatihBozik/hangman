@@ -5,6 +5,17 @@
     <color name="red">#33ff0000</color>
     <color name="blue">#ff122ac0</color>
     <color name="light_blue">#9f93bcff</color>
-    <color name="fatih">#3393BCFF</color>
+    <color name="fatih">#3358948b</color>
     <color name="black_transparent">#33000000</color>
+    <color name="orange">#FFE0B2</color>
+    <color name="orange2">#ffffd9b5</color>
+    <color name="orange_pure">#ff58948b</color>
+    <color name="brown">#6D4C41</color>
+    <color name="lime">#004D40</color>
+    <color name="teal">#ff009688</color>
+    <color name="turuncu">#FFe65100</color>
+    <color name="turuncu2">#33e65100</color>
+    <color name="green">#1B5E20</color>
+    <color name="red2">#B71C1C</color>
+    <color name="yellow">#ffb78d00</color>
 </resources>

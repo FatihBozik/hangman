@@ -125,7 +125,7 @@ public class GameActivity extends ActionBarActivity {
                 showLettersAtTextView(i, mLetter);
 
                 mGuessedLetters++;
-                mPoints = mPoints + 2;
+                mPoints += mLetter;
             }
 
         }
@@ -136,17 +136,9 @@ public class GameActivity extends ActionBarActivity {
 
         // Kelime başarıyla tahmin edildi
         if (mGuessedLetters == mWord.length()) {
-            mPoints = mPoints + 5;
+            mPoints += (mLetter * 2);
 
             createDialog(R.layout.activity_save_over);
-
-
-
-            /*
-            Intent intent = new Intent(this, SaveOverActivity.class);
-            intent.putExtra("WORD IDENTIFIER", mWord);
-            intent.putExtra("POINT IDENTIFIER", mPoints);
-            startActivity(intent);*/
         }
     }
 
@@ -165,17 +157,22 @@ public class GameActivity extends ActionBarActivity {
 
         LinearLayout linear = (LinearLayout) v.getParent();
         EditText editTextUserName = (EditText) linear.getChildAt(1);
-        //EditText editTextUserName = (EditText) findViewById(R.id.username);
 
         String name = editTextUserName.getText().toString();
 
-        SharedPreferences.Editor editor = preferences.edit();
-        String previousScore = preferences.getString("SCORES", "");
-        editor.putString("SCORES", previousScore + "\n" + name + "\t " + mPoints + " Puan \n");
-        editor.commit();
-
-        Intent mainIntent = new Intent(this, MainActivity.class);
-        startActivity(mainIntent);
+        if(!name.equals(""))
+        {
+            SharedPreferences.Editor editor = preferences.edit();
+            String previousScore = preferences.getString("SCORES", "");
+            editor.putString("SCORES", previousScore + "\n" + name + "\t " + mPoints + " Puan \n");
+            editor.commit();
+            Intent mainIntent = new Intent(this, MainActivity.class);
+            startActivity(mainIntent);
+        }
+        else
+        {
+            Toast.makeText(this, "Lütfen adınızı girin", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
@@ -241,7 +238,7 @@ public class GameActivity extends ActionBarActivity {
                 image.setImageResource(R.drawable.hangman_7);
                 break;
             case 8:
-                createDialog(R.layout.activity_game_over_actitvity);
+                createDialog(R.layout.activity_game_over);
                 break;
         }
     }

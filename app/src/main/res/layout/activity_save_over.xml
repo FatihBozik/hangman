@@ -1,8 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="com.example.fatih.hangman.GameActivity"
-    android:background="@drawable/background_base"
-    >
+    android:background="@color/white">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -16,12 +15,14 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentBottom="false"
         android:layout_centerHorizontal="true"
         android:id="@+id/layoutSaveScore"
         android:layout_marginBottom="10dp"
-        android:background="@color/fatih"
-        android:layout_alignParentStart="true">
+        android:background="@color/white"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
 
         <Button
             android:layout_width="131dp"
@@ -31,8 +32,9 @@
             android:layout_alignBottom="@+id/textView"
             android:layout_toRightOf="@+id/textView"
             android:layout_toEndOf="@+id/textView"
+            android:textColor="@color/white"
             android:layout_marginLeft="15dp"
-            android:background="@color/light_blue"
+            android:background="@color/orange_pure"
             android:onClick="saveScore" />
 
         <EditText
@@ -42,18 +44,6 @@
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:hint="Adınızı girin" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/layoutGuessWord"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/linearLayout1"
-        android:weightSum="1">
 
 
     </LinearLayout>
@@ -71,7 +61,7 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/hangmanImage"
-        android:layout_marginTop="140dp">
+        android:layout_marginTop="150dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -80,6 +70,7 @@
             android:id="@+id/textViewPoints"
             android:layout_gravity="bottom"
             android:textSize="25dp"
+            android:textColor="@color/black"
             android:layout_marginRight="5dp" />
 
         <TextView
@@ -99,11 +90,11 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Tebrikler bildiniz"
         android:id="@+id/textView"
-        android:textColor="@color/primary_material_dark"
+        android:textColor="@color/black"
         android:textSize="25dp"
         android:textIsSelectable="false"
         android:textStyle="italic"
-        android:layout_below="@+id/linearLayoutSaveOver"
+        android:layout_below="@+id/layoutSaveScore"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp" />
 
@@ -112,11 +103,12 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayoutSaveOver"
-        android:background="@color/fatih"
-        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        android:layout_alignParentTop="false"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="false">
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="true">
 
         <Button
             android:layout_width="131dp"
@@ -125,9 +117,10 @@
             android:layout_alignBottom="@+id/textView"
             android:layout_toRightOf="@+id/textView"
             android:layout_toEndOf="@+id/textView"
+            android:textColor="@color/white"
             android:layout_marginRight="20sp"
             android:onClick="returnMenu"
-            android:background="@color/light_blue"
+            android:background="@color/orange_pure"
             android:layout_marginLeft="15dp" />
 
         <Button
@@ -135,9 +128,10 @@
             android:layout_width="131dp"
             android:layout_height="49dp"
             android:text="Tekrar Oyna"
+            android:textColor="@color/white"
             android:onClick="rePlay"
             android:nestedScrollingEnabled="false"
-            android:background="@color/light_blue"
+            android:background="@color/orange_pure"
             android:layout_marginRight="30sp" />
 
     </LinearLayout>
@@ -152,7 +146,6 @@
         android:textSize="25dp"
 
         android:textStyle="bold|italic"
-        android:layout_marginTop="5dp"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
 
