@@ -28,11 +28,6 @@ public class MainActivity extends ActionBarActivity {
         startActivity(singlePlayerIntent);
     }
 
-    public void startMultiPlayerGame(View v) {
-        Intent multiPlayerIntent = new Intent(this, MultiplayerActivity.class);
-        startActivity(multiPlayerIntent);
-    }
-
     public void openScores(View v) {
         Intent scoresIntent = new Intent(this, ScoresActivity.class);
         startActivity(scoresIntent);

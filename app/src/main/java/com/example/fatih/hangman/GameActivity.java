@@ -306,16 +306,6 @@ public class GameActivity extends ActionBarActivity {
         textView.setTextColor(getResources().getColor(R.color.black));
     }
 
-    public void fillRandomly(String word) {
-
-        int randomNumber = (int) (Math.random() * indicesOfBlankLetter.size());
-        traverseAndInvisibleLetter(word.charAt(indicesOfBlankLetter.get(randomNumber)));
-
-        showLettersAtTextView(indicesOfBlankLetter.get(randomNumber), word.charAt(indicesOfBlankLetter.get(randomNumber)));
-        indicesOfBlankLetter.remove(randomNumber);
-        printButtonHintCount(--hintCount);
-
-    }
 
     public void traverseAndInvisibleLetter(char letter)
     {
@@ -337,6 +327,17 @@ public class GameActivity extends ActionBarActivity {
         }
     }
 
+    public void fillRandomly(String word) {
+
+        int randomNumber = (int) (Math.random() * indicesOfBlankLetter.size());
+        traverseAndInvisibleLetter(word.charAt(indicesOfBlankLetter.get(randomNumber)));
+
+        showLettersAtTextView(indicesOfBlankLetter.get(randomNumber), word.charAt(indicesOfBlankLetter.get(randomNumber)));
+        indicesOfBlankLetter.remove(randomNumber);
+        printButtonHintCount(--hintCount);
+
+    }
+
     public void hint(View v) {
         LinearLayout word = (LinearLayout) findViewById(R.id.linearLayoutWord);
 
@@ -355,6 +356,8 @@ public class GameActivity extends ActionBarActivity {
         else {
             fillRandomly(mWord);
         }
+
+
 
     }
 }
