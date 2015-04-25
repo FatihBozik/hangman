@@ -241,14 +241,7 @@ public class GameActivity extends ActionBarActivity {
                 image.setImageResource(R.drawable.hangman_7);
                 break;
             case 8:
-                /*
-                Intent gameOverIntent = new Intent(this, GameOverActitvity.class);
-                gameOverIntent.putExtra("Points Identifier", mPoints);
-                gameOverIntent.putExtra("Word Identifier", mWord);
-                startActivity(gameOverIntent);
-                */
                 createDialog(R.layout.activity_game_over_actitvity);
-
                 break;
         }
     }
