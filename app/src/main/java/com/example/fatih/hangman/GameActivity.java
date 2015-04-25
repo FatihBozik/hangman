@@ -2,10 +2,13 @@ package com.example.fatih.hangman;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -17,16 +20,13 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Locale;
 
-//TODO: Kelimenin anlamı da yazılacak.
-//TODO: Direk tahmin hakkı verilecek.
 //TODO: ekran çevirince patlıyor
-//TODO: geri tuşuna basınca patlıyor
 
 public class GameActivity extends ActionBarActivity {
     public  GameActivity()
     {
-        this.words = new ArrayList<String>();
-        indicesOfBlankLetter = new ArrayList<Integer>();
+        this.words = new ArrayList<>();
+        indicesOfBlankLetter = new ArrayList<>();
     }
 
     private String mWord;           //Tahmin edilecek kelime
@@ -50,6 +50,21 @@ public class GameActivity extends ActionBarActivity {
 
         printButtonHintCount(hintCount);
     }
+
+    public void createDialog(int layoutId) {
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setCancelable(false);
+        View v = getLayoutInflater().inflate(layoutId, null);
+        alertDialog.setView(v);
+        alertDialog.show();
+
+        TextView scoreTextView = (TextView) v.findViewById(R.id.textViewPoints);
+        scoreTextView.setText(String.valueOf(mPoints));
+
+        TextView wordTextView = (TextView) v.findViewById(R.id.word);
+        wordTextView.setText(mWord);
+    }
+
 
     public void printButtonHintCount(int count) {
         Button hintButton = (Button) findViewById(R.id.buttonHint);
@@ -121,13 +136,46 @@ public class GameActivity extends ActionBarActivity {
         // Kelime başarıyla tahmin edildi
         if (mGuessedLetters == mWord.length()) {
             mPoints = mPoints + 5;
+
+            createDialog(R.layout.activity_save_over);
+
+
+
+            /*
             Intent intent = new Intent(this, SaveOverActivity.class);
             intent.putExtra("WORD IDENTIFIER", mWord);
             intent.putExtra("POINT IDENTIFIER", mPoints);
-            startActivity(intent);
+            startActivity(intent);*/
         }
     }
 
+    public void returnMenu(View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void rePlay(View v) {
+        Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
+    }
+
+    public void saveScore(View v) {
+        SharedPreferences preferences = getSharedPreferences("MYPREFERENCE", MODE_PRIVATE);
+
+        LinearLayout linear = (LinearLayout) v.getParent();
+        EditText editTextUserName = (EditText) linear.getChildAt(1);
+        //EditText editTextUserName = (EditText) findViewById(R.id.username);
+
+        String name = editTextUserName.getText().toString();
+
+        SharedPreferences.Editor editor = preferences.edit();
+        String previousScore = preferences.getString("SCORES", "");
+        editor.putString("SCORES", previousScore + "\n" + name + "\t " + mPoints + " Puan \n");
+        editor.commit();
+
+        Intent mainIntent = new Intent(this, MainActivity.class);
+        startActivity(mainIntent);
+    }
 
 
     public void clearScreen() {
@@ -192,17 +240,16 @@ public class GameActivity extends ActionBarActivity {
                 image.setImageResource(R.drawable.hangman_7);
                 break;
             case 8:
+                /*
                 Intent gameOverIntent = new Intent(this, GameOverActitvity.class);
                 gameOverIntent.putExtra("Points Identifier", mPoints);
                 gameOverIntent.putExtra("Word Identifier", mWord);
                 startActivity(gameOverIntent);
+                */
+                createDialog(R.layout.activity_game_over_actitvity);
+
                 break;
         }
-
-
-
-
-
     }
 
     public void LoadWords() {
@@ -230,6 +277,7 @@ public class GameActivity extends ActionBarActivity {
 
         int randomNumber = (int) (Math.random() * words.size());
         mWord = words.get(randomNumber);
+
         createTextView(mWord);
     }
 

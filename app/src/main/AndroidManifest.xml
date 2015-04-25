@@ -24,16 +24,6 @@
             android:windowSoftInputMode="adjustNothing" >
         </activity>
         <activity
-            android:name=".GameOverActitvity"
-            android:label="@string/title_activity_game_over_actitvity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".SaveOverActivity"
-            android:label="@string/title_activity_save_over"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        </activity>
-        <activity
             android:name=".MultiplayerActivity"
             android:label="@string/title_activity_multiplayer"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" >

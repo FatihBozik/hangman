@@ -20,18 +20,18 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/layoutSaveScore"
         android:layout_marginBottom="10dp"
-        android:background="@color/fatih">
+        android:background="@color/fatih"
+        android:layout_alignParentStart="true">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="131dp"
+            android:layout_height="49dp"
             android:text="Puanı kaydet"
             android:id="@+id/save"
             android:layout_alignBottom="@+id/textView"
             android:layout_toRightOf="@+id/textView"
             android:layout_toEndOf="@+id/textView"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="15dp"
             android:background="@color/light_blue"
             android:onClick="saveScore" />
 
@@ -40,19 +40,26 @@
             android:layout_height="wrap_content"
             android:id="@+id/username"
             android:layout_marginRight="20dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="20dp"
             android:hint="Adınızı girin" />
 
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/hangmanImage"
-        android:layout_centerHorizontal="true">
+        android:layout_marginTop="140dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,8 +67,8 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/textViewPoints"
             android:layout_gravity="bottom"
-            android:layout_marginRight="5dp"
-            android:textSize="40dp" />
+            android:textSize="25dp"
+            android:layout_marginRight="5dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,11 +76,8 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=" Puan"
             android:id="@+id/textView3"
-            android:layout_gravity="bottom"
             android:layout_marginRight="5dp"
-            android:textSize="35dp" />
-
-
+            android:textSize="25dp" />
     </LinearLayout>
 
     <TextView
@@ -100,7 +104,7 @@
         android:textSize="25dp"
 
         android:textStyle="bold|italic"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
 
@@ -112,7 +116,8 @@
         android:background="@color/fatih"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="false">
 
         <Button
             android:layout_width="131dp"
@@ -121,10 +126,10 @@
             android:layout_alignBottom="@+id/textView"
             android:layout_toRightOf="@+id/textView"
             android:layout_toEndOf="@+id/textView"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20sp"
             android:onClick="returnMenu"
-            android:background="@color/light_blue"/>
+            android:background="@color/light_blue"
+            android:layout_marginLeft="15dp" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -133,7 +138,8 @@
             android:text="Tekrar Oyna"
             android:onClick="rePlay"
             android:nestedScrollingEnabled="false"
-            android:background="@color/light_blue" />
+            android:background="@color/light_blue"
+            android:layout_marginRight="30sp" />
 
     </LinearLayout>
 
