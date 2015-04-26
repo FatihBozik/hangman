@@ -39,7 +39,7 @@ public class GameActivity extends ActionBarActivity {
     private char mPreviousLetter;
     public ArrayList<String> words;
     public ArrayList<Integer> indicesOfBlankLetter;
-    private int hintCount = 2;
+    private int hintCount;
 
 
     @Override
@@ -179,6 +179,9 @@ public class GameActivity extends ActionBarActivity {
     public void clearScreen() {
         // Doğru, yanlış tahmin edilen harflerin sayısını sıfırla
         mFailedLetters = mGuessedLetters = 0;
+        mPreviousLetter = 0;
+        hintCount = 2;
+        printButtonHintCount(hintCount);
 
         // layoutlettersın çocuk TextViewlarını temizle
         LinearLayout linearLayoutWord = (LinearLayout) findViewById(R.id.linearLayoutWord);
@@ -243,7 +246,7 @@ public class GameActivity extends ActionBarActivity {
         }
     }
 
-    public void LoadWords() {
+    public void loadWords() {
 
         try {
             final InputStream open = getAssets().open("WORDS.txt");
@@ -264,7 +267,7 @@ public class GameActivity extends ActionBarActivity {
 
     public void setRandomWord() {
 
-        LoadWords();
+        loadWords();
 
         int randomNumber = (int) (Math.random() * words.size());
         mWord = words.get(randomNumber);
@@ -328,14 +331,33 @@ public class GameActivity extends ActionBarActivity {
     }
 
     public void fillRandomly(String word) {
-
         int randomNumber = (int) (Math.random() * indicesOfBlankLetter.size());
-        traverseAndInvisibleLetter(word.charAt(indicesOfBlankLetter.get(randomNumber)));
+        char letter = word.charAt(indicesOfBlankLetter.get(randomNumber));
+        traverseAndInvisibleLetter(letter);
 
-        showLettersAtTextView(indicesOfBlankLetter.get(randomNumber), word.charAt(indicesOfBlankLetter.get(randomNumber)));
+        for(int i = 0; i < mWord.length(); i++) {
+            if(mWord.charAt(i) == letter) {
+                showLettersAtTextView(i, letter);
+                mGuessedLetters++;
+            }
+        }
         indicesOfBlankLetter.remove(randomNumber);
         printButtonHintCount(--hintCount);
 
+        if(indicesOfBlankLetter.size() == 0) {
+            createDialog(R.layout.activity_save_over);
+        }
+    }
+
+    public boolean isThere(int indice) {
+       boolean control = false;
+       for(int i : indicesOfBlankLetter) {
+            if(mWord.charAt(i) == mWord.charAt(indice)) {
+                control = true;
+                break;
+            }
+       }
+       return control;
     }
 
     public void hint(View v) {
@@ -345,7 +367,9 @@ public class GameActivity extends ActionBarActivity {
             for(int i = 0; i < mWord.length(); i++) {
                 TextView txt = (TextView) word.getChildAt(i);
                 if(txt.getText().toString().charAt(0) == '_') {
-                    indicesOfBlankLetter.add(new Integer(i));
+                    if(!isThere(i)) {
+                        indicesOfBlankLetter.add(new Integer(i));
+                    }
                 }
             }
         }
@@ -356,9 +380,6 @@ public class GameActivity extends ActionBarActivity {
         else {
             fillRandomly(mWord);
         }
-
-
-
     }
 }
 
