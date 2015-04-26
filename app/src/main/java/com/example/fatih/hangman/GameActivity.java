@@ -76,8 +76,8 @@ public class GameActivity extends ActionBarActivity {
     @Override
     public void onBackPressed() {
         AlertDialog alertDialog = new AlertDialog.Builder(GameActivity.this).create();
-        alertDialog.setTitle("Çıkış");
-        alertDialog.setMessage("Oyundan çıkmak istiyor musunuz?");
+        alertDialog.setTitle("Menüye Dön");
+        alertDialog.setMessage("Menüye dönmek istiyor musunuz?");
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Evet",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
@@ -144,11 +144,13 @@ public class GameActivity extends ActionBarActivity {
 
     public void returnMenu(View v) {
         Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
     public void rePlay(View v) {
         Intent intent = new Intent(this, GameActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
