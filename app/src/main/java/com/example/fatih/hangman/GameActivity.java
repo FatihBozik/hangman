@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,6 +41,7 @@ public class GameActivity extends ActionBarActivity {
     public ArrayList<String> words;
     public ArrayList<Integer> indicesOfBlankLetter;
     private int hintCount;
+    private double wid, hi;
 
 
     @Override
@@ -49,15 +51,23 @@ public class GameActivity extends ActionBarActivity {
         clearScreen();
         setRandomWord();
 
+        final DisplayMetrics displayMetrics = new DisplayMetrics();
+        this.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        this.wid = displayMetrics.widthPixels - 20;
+        this.hi = displayMetrics.heightPixels - 20;
+
         printButtonHintCount(hintCount);
     }
 
     public void createDialog(int layoutId) {
+        final int n = (int)(this.wid * 0.95);
+        final int n2 = (int)(this.hi * 0.95);
         AlertDialog alertDialog = new AlertDialog.Builder(this).create();
         alertDialog.setCancelable(false);
         View v = getLayoutInflater().inflate(layoutId, null);
         alertDialog.setView(v);
         alertDialog.show();
+        alertDialog.getWindow().setLayout(n, n2);
 
         TextView scoreTextView = (TextView) v.findViewById(R.id.textViewPoints);
         scoreTextView.setText(String.valueOf(mPoints));
@@ -69,9 +79,9 @@ public class GameActivity extends ActionBarActivity {
 
     public void printButtonHintCount(int count) {
         Button hintButton = (Button) findViewById(R.id.buttonHint);
-        hintButton.setText("İp ucu: " + count);
-    }
 
+        hintButton.setText("İP UCU: " + count);
+}
 
     @Override
     public void onBackPressed() {

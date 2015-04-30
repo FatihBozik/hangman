@@ -5,31 +5,6 @@
     android:background="@color/white">
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="250dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="63dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/hangman"
-            android:id="@+id/textView_hangman"
-            android:textSize="45dp"
-            android:textColor="@color/turuncu"
-            android:layout_above="@+id/linearLayout"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="65dp"
-            android:background="@color/white"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="30dp"
-            android:layout_gravity="center_vertical" />
-
-    </LinearLayout>
-
-    <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,20 +27,34 @@
             android:layout_marginTop="10dp"
             android:background="@color/green" />
 
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="49dp"
+            android:text="@string/score"
+            android:id="@+id/button_score"
+            android:onClick="openScores"
+            android:background="@color/blue"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:typeface="normal"
+            android:layout_below="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp" />
+
     </LinearLayout>
 
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="49dp"
-        android:text="@string/score"
-        android:id="@+id/button_score"
-        android:onClick="openScores"
-        android:background="@color/blue"
-        android:textSize="18dp"
-        android:textColor="@color/white"
-        android:typeface="normal"
-        android:layout_below="@+id/linearLayout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/hangman"
+        android:id="@+id/textView_hangman"
+        android:textSize="40dp"
+        android:textColor="@color/turuncu"
+        android:layout_marginBottom="47dp"
+        android:background="@color/white"
+        android:layout_gravity="center_vertical"
+        android:layout_above="@+id/linearLayout"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

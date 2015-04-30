@@ -63,7 +63,7 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="350dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/linearLayout1"
             android:layout_above="@+id/layoutGuessWord"
@@ -170,7 +170,7 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/linearLayout2"
             android:layout_marginBottom="0dp"
@@ -272,7 +272,7 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/linearLayout3"
             android:layout_above="@+id/layoutGuessWord"
@@ -379,7 +379,7 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/linearLayout4"
             android:layout_above="@+id/layoutGuessWord"
