@@ -76,7 +76,7 @@
             android:text=" Puan"
             android:textColor="@color/black"
             android:id="@+id/textView3"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:layout_below="@+id/linearLayout1"
             android:layout_centerHorizontal="true" />
 
@@ -89,7 +89,7 @@
         android:text="Oyunu kaybettiniz"
         android:id="@+id/textView"
         android:textColor="@color/primary_material_dark"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textIsSelectable="false"
         android:textStyle="italic"
         android:layout_below="@+id/layoutSaveScore"

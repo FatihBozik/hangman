@@ -43,7 +43,6 @@ public class GameActivity extends ActionBarActivity {
     private int hintCount;
     private double wid, hi;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,12 +75,11 @@ public class GameActivity extends ActionBarActivity {
         wordTextView.setText(mWord);
     }
 
-
     public void printButtonHintCount(int count) {
         Button hintButton = (Button) findViewById(R.id.buttonHint);
 
         hintButton.setText("İP UCU: " + count);
-}
+    }
 
     @Override
     public void onBackPressed() {

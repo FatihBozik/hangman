@@ -10,5 +10,5 @@
         android:layout_marginRight="5dp"
         android:padding="5dp"
         android:textColor="@color/black"
-        android:textSize="37dp"
+        android:textSize="37sp"
     />
