@@ -22,8 +22,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Locale;
 
-//TODO: ekran çevirince patlıyor
-
 public class GameActivity extends ActionBarActivity {
     public  GameActivity()
     {
@@ -78,7 +76,7 @@ public class GameActivity extends ActionBarActivity {
     public void printButtonHintCount(int count) {
         Button hintButton = (Button) findViewById(R.id.buttonHint);
 
-        hintButton.setText("İP UCU: " + count);
+        hintButton.setText("İp ucu: " + count);
     }
 
     @Override

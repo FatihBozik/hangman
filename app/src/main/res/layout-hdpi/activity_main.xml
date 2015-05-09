@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/linearLayout"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="49dp"
+            android:text="@string/new_game"
+            android:id="@+id/button_singleplayer"
+            android:onClick="startSinglePlayerGame"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:typeface="normal"
+            android:layout_below="@+id/button_score"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/green" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="49dp"
+            android:text="@string/score"
+            android:id="@+id/button_score"
+            android:onClick="openScores"
+            android:background="@color/blue"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:typeface="normal"
+            android:layout_below="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/hangman"
+        android:id="@+id/textView_hangman"
+        android:textSize="40sp"
+        android:textColor="@color/turuncu"
+        android:layout_marginBottom="47dp"
+        android:background="@color/white"
+        android:layout_gravity="center_vertical"
+        android:layout_above="@+id/linearLayout"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

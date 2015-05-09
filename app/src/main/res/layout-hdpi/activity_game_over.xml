@@ -5,11 +5,13 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="185dp"
+        android:layout_height="250dp"
         android:id="@+id/hangmanImage"
-        android:src="@drawable/save_over"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:src="@drawable/game_over"
+        android:layout_below="@+id/word"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="10dp" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -18,22 +20,21 @@
         android:layout_alignParentBottom="false"
         android:layout_centerHorizontal="true"
         android:id="@+id/layoutSaveScore"
-        android:layout_marginBottom="2dp"
-        android:background="@color/white"
+        android:layout_marginBottom="10dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true">
 
         <Button
-            android:layout_width="120dp"
+            android:layout_width="131dp"
             android:layout_height="49dp"
-            android:text="Puanı kaydet"
+            android:text="Puanı Kaydet"
             android:id="@+id/save"
             android:layout_alignBottom="@+id/textView"
             android:layout_toRightOf="@+id/textView"
             android:layout_toEndOf="@+id/textView"
+            android:layout_marginLeft="15dp"
             android:textColor="@color/white"
-            android:layout_marginLeft="5dp"
             android:background="@color/teal"
             android:onClick="saveScore" />
 
@@ -41,9 +42,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/username"
-            android:layout_marginLeft="5dp"
-            android:hint="Adınız"
-            android:layout_marginRight="15dp" />
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:hint="Adınızı girin" />
 
 
     </LinearLayout>
@@ -54,18 +55,18 @@
         android:id="@+id/linearLayout1"
         android:layout_alignWithParentIfMissing="false"
         android:orientation="horizontal"
-        android:layout_marginBottom="37dp"
-        android:layout_above="@+id/linearLayoutSaveOver"
-        android:layout_centerHorizontal="true">
+        android:layout_below="@+id/hangmanImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/textViewPoints"
+            android:textColor="@color/black"
             android:layout_gravity="bottom"
             android:textSize="25dp"
-            android:textColor="@color/black"
             android:layout_marginRight="5dp" />
 
         <TextView
@@ -73,63 +74,26 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=" Puan"
+            android:textColor="@color/black"
             android:id="@+id/textView3"
-            android:layout_marginRight="5dp"
-            android:textSize="25dp"
-            android:textColor="@color/black" />
-    </LinearLayout>
+            android:textSize="25sp"
+            android:layout_below="@+id/linearLayout1"
+            android:layout_centerHorizontal="true" />
 
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Tebrikler bildiniz"
+        android:text="Oyunu kaybettiniz"
         android:id="@+id/textView"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textColor="@color/primary_material_dark"
+        android:textSize="25sp"
         android:textIsSelectable="false"
         android:textStyle="italic"
         android:layout_below="@+id/layoutSaveScore"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayoutSaveOver"
-        android:background="@color/white"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentBottom="true">
-
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="49dp"
-            android:text="Menüye Dön"
-            android:layout_alignBottom="@+id/textView"
-            android:layout_toRightOf="@+id/textView"
-            android:layout_toEndOf="@+id/textView"
-            android:textColor="@color/white"
-            android:onClick="returnMenu"
-            android:background="@color/teal"
-            android:layout_marginLeft="5dp" />
-
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="49dp"
-            android:text="Tekrar Oyna"
-            android:textColor="@color/white"
-            android:onClick="rePlay"
-            android:nestedScrollingEnabled="false"
-            android:background="@color/teal"
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp" />
-
-    </LinearLayout>
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -138,10 +102,45 @@
         android:id="@+id/word"
         android:textIsSelectable="false"
         android:textColor="@color/blue"
-        android:textSize="20sp"
-
+        android:textSize="25dp"
         android:textStyle="bold|italic"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayoutGameOver"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:layout_width="131dp"
+            android:layout_height="49dp"
+            android:text="Menüye Dön"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_toEndOf="@+id/textView"
+            android:layout_marginRight="20sp"
+            android:onClick="returnMenu"
+            android:background="@color/teal"
+            android:textColor="@color/white"
+            android:layout_marginLeft="15dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="131dp"
+            android:layout_height="49dp"
+            android:text="Tekrar Oyna"
+            android:textColor="@color/white"
+            android:onClick="rePlay"
+            android:nestedScrollingEnabled="false"
+            android:background="@color/teal"
+            android:layout_marginRight="30sp" />
+
+    </LinearLayout>
 
 </RelativeLayout>
