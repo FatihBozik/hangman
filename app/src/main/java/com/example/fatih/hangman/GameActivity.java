@@ -45,8 +45,8 @@ public class GameActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        clearScreen();
         setRandomWord();
+        clearScreen();
 
         final DisplayMetrics displayMetrics = new DisplayMetrics();
         this.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -183,7 +183,6 @@ public class GameActivity extends ActionBarActivity {
         }
     }
 
-
     public void clearScreen() {
         // Doğru, yanlış tahmin edilen harflerin sayısını sıfırla
         mFailedLetters = mGuessedLetters = 0;
@@ -211,7 +210,6 @@ public class GameActivity extends ActionBarActivity {
         //Resmi hangman_0 olarak değiştir.
         ImageView imageView = (ImageView) findViewById(R.id.hangmanImage);
         imageView.setImageResource(R.drawable.hangman_0);
-
     }
 
     public void pass(View v) {
