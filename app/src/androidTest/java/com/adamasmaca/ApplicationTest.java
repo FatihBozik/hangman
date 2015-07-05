@@ -1,4 +1,4 @@
-package com.example.fatih.hangman;
+package com.adamasmaca;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

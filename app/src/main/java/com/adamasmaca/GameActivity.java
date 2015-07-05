@@ -1,4 +1,4 @@
-package com.example.fatih.hangman;
+package com.adamasmaca;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -150,13 +150,13 @@ public class GameActivity extends ActionBarActivity {
 
     public void returnMenu(View v) {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
     public void rePlay(View v) {
         Intent intent = new Intent(this, GameActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
@@ -175,6 +175,7 @@ public class GameActivity extends ActionBarActivity {
             editor.putString("SCORES", previousScore + "\n" + name + "\t " + mPoints + " Puan \n");
             editor.commit();
             Intent mainIntent = new Intent(this, MainActivity.class);
+            mainIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(mainIntent);
         }
         else

@@ -1,4 +1,4 @@
-package com.example.fatih.hangman;
+package com.adamasmaca;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -25,11 +25,13 @@ public class MainActivity extends ActionBarActivity {
 
     public void startSinglePlayerGame(View v) {
         Intent singlePlayerIntent = new Intent(this, GameActivity.class);
+        singlePlayerIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(singlePlayerIntent);
     }
 
     public void openScores(View v) {
         Intent scoresIntent = new Intent(this, ScoresActivity.class);
+        scoresIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(scoresIntent);
     }
 

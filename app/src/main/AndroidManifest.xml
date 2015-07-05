@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.fatih.hangman" >
+    package="com.adamasmaca" >
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="com.adamasmaca.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait" >
@@ -19,14 +19,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".GameActivity"
+            android:name="com.adamasmaca.GameActivity"
             android:label="@string/title_activity_game"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="adjustNothing"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".ScoresActivity"
+            android:name="com.adamasmaca.ScoresActivity"
             android:label="@string/title_activity_scores"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait" >
